@@ -1,0 +1,26 @@
+h1,h2{
+color:dodgerblue;
+background-color:aliceblue;
+width: 100%;
+}
+
+form{
+width: 30%;	
+}
+
+body{
+	margin-left: 5%;
+	margin-right: 5%;
+	
+}
+
+#preamble{
+	display: none;
+}
+
+#corps{
+float: right;
+width: 80%;
+position:relative;
+}
+
