@@ -1,0 +1,45 @@
+html {
+	box-sizing:border-box}*,*:before,*:after{box-sizing:inherit};
+
+header {
+	position: fixed;
+    width: 100%;
+    z-index: 1;
+	top: 0;
+	text-align: left;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	text-decoration: none;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header ul li {
+	float: left;
+}
+
+a {
+	text-decoration: none!important;
+}
+
+#corps {
+	margin-top: 50px;
+}
+
+footer {
+	display: table;
+}
+
+.green{
+    color: #fff;
+    background-color: #4CAF50;
+}
+
+.hover-white:hover {
+	color:#000;
+	background-color:#fff;
+}
