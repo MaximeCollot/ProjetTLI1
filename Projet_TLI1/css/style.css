@@ -1,9 +1,10 @@
-ul {
+a {
 	text-decoration: none;
 }
 
 #corps {
 	margin-top: 50px;
+	text-align: center;
 }
 
 footer {
