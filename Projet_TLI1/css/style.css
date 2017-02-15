@@ -1,10 +1,32 @@
+body {
+    margin: 0;
+    font-size: 15px;
+}
+
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
 #corps {
 	margin-top: 50px;
 	text-align: center;
+}
+
+header {
+	top: 0;
+	position: fixed;
+	width: 100%;
+	background-color: green;
+	color: white;
+}
+
+#connectBar {
+	float: right;
+}
+
+.header-button-right {
+	float: right;
 }
 
 footer {
