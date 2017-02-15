@@ -14,6 +14,14 @@
 	</head>
 	<body>
 	<header>
+		<nav class="headerNav">
+	                <a href="/welcome.html" class="header-button-left currentPage" tabindex="1" accesskey="a">Home</a>
+	                <a href="/page1.html" class="header-button-left" tabindex="1" accesskey="a">Accueil</a>
+	                <a href="/page2.html" class="header-button-left" tabindex="2" accesskey="z">Page 2</a>
+	                <a href="/page3.html" class="header-button-left" tabindex="3" accesskey="e">Page 3</a>
+	                <a href="#" onclick="showConnect()" class="header-button-right" tabindex="4" accesskey="c">Connexion</a>
+	                <a href="/subscription.html" class="header-button-right" tabindex="5" accesskey="i">Inscription</a> 
+		</nav>    
 		<div id="connectBar" style="display: none">
 			<form>
 				<label>
@@ -26,15 +34,7 @@
 				<input type="password" name="password">
 				<button type="submit" class="w3-btn w3-round w3-small w3-white">Valider</button>
 			</form>
-		</div>
-		<nav>
-	                <a href="/welcome.html" class="w3-padding-large w3-white" tabindex="1" accesskey="a">Home</a>
-	                <a href="/page1.html" class="w3-padding-large hover-white w3-large" tabindex="1" accesskey="a">Page 1</a>
-	                <a href="/page2.html" class="w3-padding-large hover-white w3-large" tabindex="2" accesskey="z">Page 2</a>
-	                <a href="/page3.html" class="w3-padding-large hover-white w3-large" tabindex="3" accesskey="e">Page 3</a>
-	                <a href="#" oninput="showConnect()" class="header-button-right" tabindex="4" accesskey="c">Connexion</a>
-	                <a href="/subscription.html" class="header-button-right" tabindex="5" accesskey="i">Inscription</a> 
-		</nav>      
+		</div>  
 	</header>
 		
 	<div id="corps">
@@ -44,7 +44,7 @@
 		<p>Bienvenue sur notre site 2.0 d'accuponcture</p>
 	</div>
 
-	<footer class="w3-container w3-padding-64 w3-center">
+	<footer>
 		<nav>
 			<a href="about.html" tabindex="51" accesskey="a">About</a></li>
 			<a href="contact.html"  tabindex="52" accesskey="c">Contact</a>

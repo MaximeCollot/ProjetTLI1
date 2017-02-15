@@ -8,9 +8,26 @@ a {
 	color: inherit;
 }
 
+button, input, a {
+	font-family: 'Verdana',sans-serif;
+}
+
 #corps {
 	margin-top: 50px;
 	text-align: center;
+}
+
+.headerNav a {
+	padding: 10px;
+}
+
+.headerNav a:hover {
+	background-color: white;
+	color: black;
+}
+
+.currentPage {
+	font-weight: bold;
 }
 
 header {
@@ -25,10 +42,14 @@ header {
 	float: right;
 }
 
+.header-button-left {
+	float: left;
+}
+
 .header-button-right {
 	float: right;
 }
 
 footer {
-	
+	text-align: center;
 }
