@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-size: 15px;
+    width: 100%;
 }
 
 a {
@@ -15,6 +16,13 @@ button, input, a {
 #corps {
 	margin-top: 50px;
 	text-align: center;
+}
+
+.headerNav {
+	width: 100%;
+	background-color: green;
+	color: white;
+	height: 40px;
 }
 
 .headerNav a {
@@ -34,12 +42,14 @@ header {
 	top: 0;
 	position: fixed;
 	width: 100%;
-	background-color: green;
-	color: white;
 }
 
 #connectBar {
-	float: right;
+    float: right;
+    background-color: green;
+	color: white;
+	 padding: 10px;
+
 }
 
 .header-button-left {
