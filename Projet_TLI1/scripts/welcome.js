@@ -1,4 +1,11 @@
 function showConnect () {
 	console.log("showConnect");
-	document.getElementById("connectBar").style.display = "block";
+	var connectBar = document.getElementById("connectBar");
+	console.log(connectBar);
+	console.log(connectBar.hidden);
+	if (connectBar.hidden) {
+		connectBar.hidden = false;
+	} else {
+		connectBar.hidden = true;
+	}
 }
