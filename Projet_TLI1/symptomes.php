@@ -12,10 +12,10 @@
 	<body>
 	<header>
 		<nav class="headerNav" role="menubar">
-	                <a href="/welcome.html" class="header-button-left" tabindex="1" accesskey="a">Accueil</a>
-	                <a href="/page2.html" class="header-button-left currentPage" tabindex="2" accesskey="z">Symptomes</a>
+	                <a href="index.html" class="header-button-left" tabindex="1" accesskey="a">Accueil</a>
+	                <a href="page2.html" class="header-button-left currentPage" tabindex="2" accesskey="z">Symptomes</a>
 	                <a href="#" onclick="showConnect()" class="header-button-right" tabindex="4" accesskey="c">Connexion</a>
-	                <a href="/subscription.html" class="header-button-right" tabindex="5" accesskey="i">Inscription</a> 
+	                <a href="subscription.html" class="header-button-right" tabindex="5" accesskey="i">Inscription</a> 
 		</nav>    
 		<div id="connectBar" hidden="true">
 			<form>
