@@ -64,15 +64,22 @@ footer {
 	text-align: center;
 }
 
-form {
- background-color:#FAFAFA;
- padding:10px;
- width:100%;
- }
 
-input[type=submit], input[type=reset] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #D83F3D;
- cursor:pointer;
- }
+/*CSS for the formulaire*/
+.input-subscripe {
+    width: 200px;
+    
+}
+
+.input-group {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+}
+
+.label-suscribe {
+    padding: 1vh;
+    display: inline-flex;
+    border: none;
+    width: 200px;
+}
