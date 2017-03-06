@@ -1,0 +1,15 @@
+body {margin: 0%}
+
+nav {display: none;}
+
+form {display: none;}
+
+a:after{content:" (" attr(href) ") ";font-weight:normal;color:blue;}
+
+a{color: #FFFFFF;text-decoration: none;}
+
+
+
+
+
+

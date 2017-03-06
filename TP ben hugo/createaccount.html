@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="form.css" media="screen and (min-width: 641px)">
+  <link rel="stylesheet" href="print.css" media="print" />
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 640px)">
+  <title>Pathologies acupuncture</title>
+  <script type='text/javascript' src='scripts/register_script.js'></script>
+</head>
+
+<body>
+
+  <header>
+
+    <nav>
+
+      <a href="index.php?item=home" tabindex="1">Accueil</a>
+      <a href="index.php?item=patho" tabindex="2" accesskey="2">Pathologies</a>
+      <a href="index.php?item=info" tabindex="3">Informations</a>
+
+    </nav>
+  </header>
+
+  
+  <form method="post" action="lib/main.php?variable=truc" id="formulaire">
+    <ul>
+      <li>
+        <label for="username">Nom d'utilisateur&nbsp;:</label>
+        <input type="text" id="username" pattern="[A-Za-z0-9]{3,}" name="username" required>
+      </li>
+      <li>
+        <label for="email_addr">Adresse e-mail&nbsp;:</label>
+        <input type="email" id="email_addr" name="email_addr" required>
+      </li>
+      <li>
+        <label for="email_addr_repeat">Confirmez l'adresse e-mail&nbsp;:</label>
+        <input type="email" id="email_addr_repeat" name="email_addr_repeat" required 
+        onchange="checkMail(this)">
+      </li>
+      <li>
+        <label for="motdepasse">Mot de passe (au moins 6 caractères alphanumériques)&nbsp;:</label>
+        <input type="password" id="motdepasse" name="motdepasse" pattern="[A-Za-z0-9]{6,}" required>
+      </li>
+      <li>
+        <label for="motdepasse_repeat">Mot de passe&nbsp;:</label>
+        <input type="password" id="motdepasse_repeat" name="motdepasse_repeat" required
+        onchange="checkPassword(this)">
+      </li>
+      <li>
+        <input type="submit" value="Créer mon compte" /> 
+      </li>
+    </ul>
+  </form>
+
+  <footer>
+    Copyright TALBOT-NARDIN 2017
+  </footer>
+
+</body>
+
+</html>
