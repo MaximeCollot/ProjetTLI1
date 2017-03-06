@@ -1,7 +1,7 @@
 <!DOCTYPE html >
 <html lang="fr">
 	<head>
-		<title>Home Page</title>
+		<title>Acupuncture</title>
 		<meta charset="utf-8">      
 	    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (min-width: 641px)" />
 	    <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 641px)">
