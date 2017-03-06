@@ -1,27 +1,13 @@
 <?php
 
 include 'Templates/header.tpl';
+require("lib/class/AcuPdo.class.php");
+require("lib/smarty/Smarty.class.php");
 
 echo "<div id='content'></div>";
 
-try
-
-{
-
-    $bdd = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', '1604');
-
-}
-
-catch (Exception $e)
-
-{
-
-        die('Erreur : ' . $e->getMessage());
-
-}
-
 // On inclut la classe Smarty
-require("lib/smarty/Smarty.class.php");
+$pdo =  AcuPdo::getinstance();
 $smarty = new Smarty();
 $page = "home.tpl";
 if (isset($_GET['item'])) {
@@ -32,10 +18,8 @@ if (isset($_GET['item'])) {
             break;
 
         case 'patho':
-            $query = $bdd->prepare("SELECT `desc` FROM patho");
-            $query->execute();
-            $list_patho = $query->fetch();
-            //var_dump($list_patho);
+            $list_patho = $pdo->getpatho();
+            var_dump($list_patho);
             $smarty->assign('list_patho', $list_patho);
             $page = "patho.tpl";
             //echo($list_patho);
