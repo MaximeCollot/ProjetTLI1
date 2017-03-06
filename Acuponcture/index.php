@@ -35,17 +35,21 @@ if (isset($_GET['item'])) {
             $query = $bdd->prepare("SELECT `desc` FROM patho");
             $query->execute();
             $list_patho = $query->fetch();
-            var_dump($list_patho);
+            //var_dump($list_patho);
             $smarty->assign('list_patho', $list_patho);
             $page = "patho.tpl";
             //echo($list_patho);
             break;
-        case 'info':
-            $page = "info.tpl";
-            break;
         case 'subscribe':
         	$page = 'subscribe.tpl';
         	break;
+        case 'info':
+            $page = "info.tpl";
+            break;
+        case 'contact':
+            $page = "contact.tpl";
+            break;
+
     }
 }
 

@@ -4,6 +4,10 @@ body {
     width: 100%;
 }
 
+h1 {
+	border-bottom: 1vh solid green;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
