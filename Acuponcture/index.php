@@ -19,10 +19,8 @@ if (isset($_GET['item'])) {
 
         case 'patho':
             $list_patho = $pdo->getpatho();
-            var_dump($list_patho);
             $smarty->assign('list_patho', $list_patho);
             $page = "patho.tpl";
-            //echo($list_patho);
             break;
         case 'subscribe':
         	$page = 'subscribe.tpl';
