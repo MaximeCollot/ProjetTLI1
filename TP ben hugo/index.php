@@ -4,7 +4,7 @@ try
 
 {
 
-    $bdd = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', '1604');
 
 }
 
@@ -31,7 +31,7 @@ if (isset($_GET['item'])) {
             $query = $bdd->prepare("SELECT `desc` FROM patho");
             $query->execute();
             $list_patho = $query->fetch();
-            echo($list_patho->);
+            echo($list_patho);
             $smarty->assign('list_patho', $list_patho);
             $page = "pathologies.tpl";
             //echo($list_patho);
