@@ -2523,6 +2523,17 @@ INSERT INTO `typepatho` (`code`, `nom`, `carac1`, `carac2`) VALUES
 ALTER TABLE `typepatho`
   ADD PRIMARY KEY (`code`);
 
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `mail` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+   PRIMARY KEY (`id`(10))
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
