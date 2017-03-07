@@ -24,10 +24,14 @@ if(isset($_POST['connection'])){
             if(authentication($pdo)){
                 $_SESSION['mail'] = $_POST['mail'];
                 $mail = $_POST['mail'];
+            }else{
+                $messageErreur = "Le couple identifiant/mot de passe n'est pas valide";
             }
         }else{
-            // alert mot de passe vide
+            $messageErreur = "Vous n'avez pas renseigné votre mot de passe";
         }
+    }else{
+        $messageErreur = "Vous n'avez pas renseigné votre identifiant";
     }
 }
 
@@ -64,6 +68,10 @@ if (isset($_GET['page'])) {
 $smarty->assign('page', $page);
 
 $smarty->display('header.tpl');
+if (isset($messageErreur)) {
+    $smarty->assign('messageErreur', $messageErreur);
+    $smarty->display('erreur.tpl');
+}
 $smarty->display($template);
 
 include 'Templates/footer.tpl';

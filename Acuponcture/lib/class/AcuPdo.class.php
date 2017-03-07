@@ -50,7 +50,7 @@ class AcuPdo {
         if (!isset($this->_db)) {
             $this->getdb();
         }
-        $query = $this->_db->prepare('SELECT `id` FROM user WHERE mail = :mail AND password = :password');
+        $query = $this->_db->prepare('SELECT `*` FROM user WHERE mail = :mail AND password = :password');
         $query->execute((array(':mail' => $mail, ':password' => $password)));
         $result = $query->fetchAll();
         if (count($result)>0){

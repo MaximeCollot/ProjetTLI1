@@ -23,7 +23,7 @@
 	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="2" accesskey="i">Inscription</a>
 	            	{else}
 	            		<div id="userMail">{$mail}</div>
-	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="5" accesskey="d">Déonnexion</a>
+	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="5" accesskey="d">Déconnexion</a>
 	            	{/if}
 		</nav>    
 		<div id="connectBar" hidden aria-hidden=true>
