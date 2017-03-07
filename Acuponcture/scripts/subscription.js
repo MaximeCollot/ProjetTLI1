@@ -1,5 +1,6 @@
-	
+
 function checkConfirmEmail(input) {
+	console.log('coucou');	
 	if (input.value != document.getElementById('email_addr').value) {
 		input.setCustomValidity('Les adresses mail ne correspondent pas');
 	} else {
