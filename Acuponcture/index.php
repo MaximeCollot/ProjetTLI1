@@ -63,7 +63,7 @@ if(isset($_POST['inscription'])){
             }
         }else{
             // alert erreur d'insertion BDD
-            echo('compte non créé');
+            $messageErreur = "Ce compte existe déjà";
         }
     }
 }
