@@ -11,14 +11,13 @@
 	<div class="input-group">
 		<label class="label-suscribe" for="email_addr">Adresse e-mail&nbsp;:</label>
 		{literal}
-		<input class="input-subscripe" type="email" id="email_addr" name="email_addr" tabindex="11" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="adresse@mail.fr" required>
+		<input class="input-subscripe" type="email" id="email_addr" name="email_addr" tabindex="11" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="adresse@mail.fr" required onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Le format d\'adresse mail est incorrect' : ''); if(this.checkValidity()) form.email_addr_repeat.pattern = this.value;">
 		{/literal}
 	</div>
 	<div class="input-group">
 		<label class="label-suscribe" for="email_addr_repeat">Confirmez l'adresse e-mail&nbsp;:</label>
 		{literal}
-		<input class="input-subscripe" type="email" id="email_addr_repeat" name="email_addr_repeat" tabindex="12" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="adresse@mail.fr" required 
-		onblur="checkConfirmEmail(this)">
+		<input class="input-subscripe" type="email" id="email_addr_repeat" name="email_addr_repeat" tabindex="12" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="adresse@mail.fr" required onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Les adresses mail ne correspondent pas' : '');">
 		{/literal}
 	</div>
 	<div class="input-group">
