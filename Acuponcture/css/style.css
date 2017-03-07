@@ -1,3 +1,32 @@
+
+
+
+h1#flux-titre {
+    text-align: right;
+}
+
+#description {
+    padding-right: 2%;
+    width: 68%;
+    float: left;    
+}
+
+#flux {
+    float: right;
+    padding-left: 2%;
+    width: 28%;
+    text-align: right;
+    vertical-align: top;    
+    
+}
+
+#create-account {
+    margin-right: 70%;
+}
+
+
+
+
 body {
     margin: 0;
     font-size: 15px;
@@ -23,6 +52,7 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
 
 button, input, a {
 	font-family: 'Verdana',sans-serif;
@@ -83,7 +113,8 @@ header {
 }
 
 footer {
-	text-align: left;
+	text-align: center;
+    margin-top: 2vh;
 }
 
 /*CSS for the formulaire*/
