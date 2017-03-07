@@ -9,7 +9,7 @@ $pdo =  AcuPdo::getinstance();
 
 // Si l'utilisateur se déconnecte, on supprime les données de session
 if(isset($_GET['deconnect'])){
-    unset($_SESSION['mail']);
+    unset($_SESSION['identifiant']);
 }
 
 // Si l'utilisateur se connecte, on vérifie ses identifiants
@@ -23,9 +23,10 @@ if(isset($_SESSION['identifiant'])){
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
         if(isset($_POST['password'])){
-            if(authentication($pdo)){
-                $_SESSION['mail'] = $_POST['mail'];
-                $mail = $_POST['mail'];
+            $auth = authentication($pdo);
+            if($auth){
+                $_SESSION['identifiant'] = $auth;
+                $identifiant = $auth;
             }else{
                 $messageErreur = "Le couple identifiant/mot de passe n'est pas valide";
             }
@@ -107,6 +108,7 @@ include 'Templates/footer.tpl';
 
 function authentication($pdo){
     $result = $pdo->getUser($_POST['mail'], $_POST['password']);
+    echo($result);
     return $result;
 }
 

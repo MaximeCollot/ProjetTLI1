@@ -76,9 +76,9 @@ header {
 	float: right;
 }
 
-#userMail {
-	float: right;
+#identifiant {
 	padding: 15px;
+	float: right;
 	font-weight: bold;
 }
 
