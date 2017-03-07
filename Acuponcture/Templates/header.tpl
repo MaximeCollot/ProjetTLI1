@@ -16,14 +16,14 @@
 	<body>
 	<header>
 		<nav class="headerNav">
-	                <a href="index.php?page=home" class="header-button-left currentPage" tabindex="-1" accesskey="w">Accueil</a>
-	                <a href="index.php?page=patho" class="header-button-left" tabindex="-1" accesskey="s">Symptomes</a>
+	                <a href="index.php?page=home" class="header-button-left currentPage" tabindex="4" accesskey="w">Accueil</a>
+	                <a href="index.php?page=patho" class="header-button-left" tabindex="3" accesskey="s">Symptomes</a>
 	                {if $mail == ''}
-	                	<a href="#" onclick="showConnect()" class="header-button-right" tabindex="-1" accesskey="c">Connexion</a>
-	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="-1" accesskey="i">Inscription</a>
+	                	<a href="#" onclick="showConnect()" class="header-button-right" tabindex="1" accesskey="c">Connexion</a>
+	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="2" accesskey="i">Inscription</a>
 	            	{else}
 	            		<div id="userMail">{$mail}</div>
-	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="-1" accesskey="d">Déonnexion</a>
+	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="5" accesskey="d">Déonnexion</a>
 	            	{/if}
 		</nav>    
 		<div id="connectBar" hidden aria-hidden=true>
