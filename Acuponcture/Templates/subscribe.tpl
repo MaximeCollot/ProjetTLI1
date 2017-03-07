@@ -1,7 +1,7 @@
 <h1>Inscription</h1>
 <script type='text/javascript' src='scripts/subscription.js'></script>
 
-<form class="form-subscribe" method="post" action="lib/main.php?variable=truc" id="formulaire">
+<form class="form-subscribe" method="post" action="index.php?page={$page}" id="formulaire">
 	
 		<div class="input-group">
 			<label class="label-suscribe" for="idperso">Identifiant&nbsp;:</label>

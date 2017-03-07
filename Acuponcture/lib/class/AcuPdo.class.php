@@ -59,7 +59,6 @@ class AcuPdo {
             return false;
         }
     }
-<<<<<<< HEAD
 
     public function createUser($identifiant, $mail, $password){
         if (!isset($this->_db)) {
@@ -74,6 +73,4 @@ class AcuPdo {
             return false;
         }
     }
-=======
->>>>>>> 8d50a55c091cf83b725093c4d072d14b2062dacf
 }

@@ -66,22 +66,22 @@ if (isset($_GET['page'])) {
 
     switch ($page){
         case 'home':
-            break;
+        break;
 
         case 'patho':
-            $list_patho = $pdo->getpatho();
-            $smarty->assign('list_patho', $list_patho);
-            $template = "patho.tpl";
-            break;
+        $list_patho = $pdo->getpatho();
+        $smarty->assign('list_patho', $list_patho);
+        $template = "patho.tpl";
+        break;
         case 'subscribe':
-        	$template = 'subscribe.tpl';
-        	break;
+        $template = 'subscribe.tpl';
+        break;
         case 'info':
-            $template = "info.tpl";
-            break;
+        $template = "info.tpl";
+        break;
         case 'contact':
-            $template = "contact.tpl";
-            break;
+        $template = "contact.tpl";
+        break;
 
     }
 }else{
@@ -106,8 +106,13 @@ $smarty->display($template);
 include 'Templates/footer.tpl';
 
 
-    function accountcreate($pdo){
-        $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
-        return $result;
-    }
+function accountcreate($pdo){
+    $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
+    return $result;
+}
+
+function createUser($pdo){
+    $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
+    return $result;
+}
 ?>
