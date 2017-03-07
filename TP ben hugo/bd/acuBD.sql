@@ -2468,3 +2468,62 @@ INSERT INTO `symptPatho` (`idS`, `idP`, `aggr`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `typepatho`
+--
+
+CREATE TABLE `typepatho` (
+  `code` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nom` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `carac1` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `carac2` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `typepatho`
+--
+
+INSERT INTO `typepatho` (`code`, `nom`, `carac1`, `carac2`) VALUES
+('me', 'méridien', 'externe', ''),
+('mi', 'méridien', 'interne', ''),
+('lp', 'luo', 'plein', ''),
+('lv', 'luo', 'vide', ''),
+('j', 'jing jin', '', ''),
+('tfv', 'organe/viscère', 'vide', ''),
+('tfp', 'organe/viscère', 'plein', ''),
+('tff', 'organe/viscère', 'froid', ''),
+('tfc', 'organe/viscère', 'chaud', ''),
+('tfpc', 'organe/viscère', 'plein', 'chaud'),
+('tfvf', 'organe/viscère', 'vide', 'froid'),
+('l2p', 'luo', 'plein', ''),
+('l2v', 'luo', 'vide', ''),
+('tfv-', 'organe/viscère', 'vide', ''),
+('tfv+', 'organe/viscère', 'vide', ''),
+('tfvfs', 'organe/viscère', 'vide', 'froid'),
+('tfpcs', 'organe/viscère', 'plein', 'chaud'),
+('tfvfm', 'organe/viscère', 'vide', 'froid'),
+('tfpcm', 'organe/viscère', 'plein', 'chaud'),
+('tfvfi', 'organe/viscère', 'vide', 'froid'),
+('tfpci', 'organe/viscère', 'plein', 'chaud'),
+('mv', 'merveilleux vaisseaux', '', ''),
+('mva', 'merveilleux vaisseaux', '', ''),
+('mvi', 'merveilleux vaisseaux', '', ''),
+('mvp', 'merveilleux vaisseaux', '', '');
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `typepatho`
+--
+ALTER TABLE `typepatho`
+  ADD PRIMARY KEY (`code`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
