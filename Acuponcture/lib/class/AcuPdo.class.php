@@ -65,13 +65,15 @@ class AcuPdo {
         if (!isset($this->_db)) {
             $this->getdb();
         }
-        $query = $this->_db->prepare('INSERT INTO user (identifiant, mail, password) VALUES (:identifiant, :mail, :password)');
-        $result = $query->execute((array(':identifiant' => $identifiant, ':mail' => $mail, ':password' => $password)));
-
-        if ($result){
-            return true;
-        }else{
+        $query = $this->_db->prepare('SELECT `mail` FROM user WHERE mail = :mail');
+        $query->execute(array(':mail' => $mail));
+        $result = $query->fetchAll();
+        if (count($result)>0){
             return false;
+        }else{
+            $query = $this->_db->prepare('INSERT INTO user (identifiant, mail, password) VALUES (:identifiant, :mail, :password)');
+            $result = $query->execute((array(':identifiant' => $identifiant, ':mail' => $mail, ':password' => $password)));
+            return true;
         }
     }
 }
