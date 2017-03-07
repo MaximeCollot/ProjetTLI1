@@ -22,9 +22,3 @@ function checkConfirmPassword(input) {
 	}
     console.log(input);
 }
-
-function createAccount(form){
-
-	//creer le compte dans la bdd
-
-}
