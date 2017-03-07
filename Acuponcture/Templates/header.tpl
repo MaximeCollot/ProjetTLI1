@@ -16,21 +16,25 @@
 	<body>
 	<header>
 		<nav class="headerNav">
-	                <a href="index.php?item=home" class="header-button-left currentPage" tabindex="-1" accesskey="w">Accueil</a>
-	                <a href="index.php?item=patho" class="header-button-left" tabindex="-1" accesskey="s">Symptomes</a>
-	                <a href="#" onclick="showConnect()" class="header-button-right" tabindex="-1" accesskey="c">Connexion</a>
-	                <a href="index.php?item=subscribe" class="header-button-right" tabindex="-1" accesskey="i">Inscription</a> 
+	                <a href="index.php?page=home" class="header-button-left currentPage" tabindex="-1" accesskey="w">Accueil</a>
+	                <a href="index.php?page=patho" class="header-button-left" tabindex="-1" accesskey="s">Symptomes</a>
+	                {if $mail == ''}
+	                	<a href="#" onclick="showConnect()" class="header-button-right" tabindex="-1" accesskey="c">Connexion</a>
+	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="-1" accesskey="i">Inscription</a>
+	            	{else}
+	            		<div id="userMail">{$mail}</div>
+	            	{/if}
 		</nav>    
 		<div id="connectBar" hidden aria-hidden=true>
-			<form>
+			<form action="index.php?page={$page}" method="post">
 				<label for="mail">
 					Mail :
 				</label>
-				<input type="email" name="mail" id="mail">
+				<input type="email" name="mail" id="mail" required>
 				<label for="password">
 					Mot de passe :
 				</label>
-				<input type="password" name="password" id="password">
+				<input type="password" name="password" id="password" required>
 				<button type="submit" class="">Valider</button>
 			</form>
 		</div>  

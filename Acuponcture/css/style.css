@@ -20,6 +20,7 @@ button, input, a {
 #content {
 	margin-top: 50px;
 	text-align: center;
+	overflow: auto;
 }
 
 .headerNav {
@@ -62,6 +63,12 @@ header {
 
 .header-button-right {
 	float: right;
+}
+
+#userMail {
+	float: right;
+	padding: 15px;
+	font-weight: bold;
 }
 
 footer {

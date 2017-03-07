@@ -45,4 +45,18 @@ class AcuPdo {
 
         return $query;
     }
+
+    public function getUser($mail, $password){
+        if (!isset($this->_db)) {
+            $this->getdb();
+        }
+        $query = $this->_db->prepare('SELECT `id` FROM user WHERE mail = :mail AND password = :password');
+        $query->execute((array(':mail' => $mail, ':password' => $password)));
+        $result = $query->fetchAll();
+        if (count($result)>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
