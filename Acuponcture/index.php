@@ -7,26 +7,29 @@ $smarty = new Smarty();
 // On initialise la connexion à la bdd
 $pdo =  AcuPdo::getinstance();
 
+// Si l'utilisateur se déconnecte, on supprime les données de session
+if(isset($_GET['deconnect'])){
+    unset($_SESSION['mail']);
+}
+
 // Si l'utilisateur se connecte, on vérifie ses identifiants
 if(isset($_SESSION['mail'])){
     $mail = $_SESSION['mail'];
 }else{
     $mail = "";
 }
-
-if(isset($_POST['mail'])){
-    if(isset($_POST['password'])){
-        if(authentication($pdo)){
-            $_SESSION['mail'] = $_POST['mail'];
-            $mail = $_POST['mail'];
-            echo "authentication";
-            echo $mail;
+if(isset($_POST['connection'])){
+    if(isset($_POST['mail'])){
+        if(isset($_POST['password'])){
+            if(authentication($pdo)){
+                $_SESSION['mail'] = $_POST['mail'];
+                $mail = $_POST['mail'];
+            }
+        }else{
+            // alert mot de passe vide
         }
-    }else{
-        // alert mot de passe vide
     }
 }
-
 
 $smarty->assign('mail', $mail);
 

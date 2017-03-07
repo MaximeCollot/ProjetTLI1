@@ -23,6 +23,7 @@
 	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="-1" accesskey="i">Inscription</a>
 	            	{else}
 	            		<div id="userMail">{$mail}</div>
+	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="-1" accesskey="d">Déonnexion</a>
 	            	{/if}
 		</nav>    
 		<div id="connectBar" hidden aria-hidden=true>
@@ -35,7 +36,7 @@
 					Mot de passe :
 				</label>
 				<input type="password" name="password" id="password" required>
-				<button type="submit" class="">Valider</button>
+				<button type="submit" name="connection" class="">Valider</button>
 			</form>
 		</div>  
 	</header>
