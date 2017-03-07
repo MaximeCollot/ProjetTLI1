@@ -120,7 +120,7 @@ header {
 
 footer {
 	text-align: center;
-    margin-top: 2%;
+    margin-top: 2vh;
 }
 
 /*CSS for the formulaire*/
@@ -139,7 +139,7 @@ footer {
     padding: 1vh;
     display: inline-flex;
     border: none;
-    width: 200px;
+    width: 220px;
 }
 
 .alert {

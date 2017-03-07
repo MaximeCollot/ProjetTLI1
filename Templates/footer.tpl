@@ -1,3 +1,5 @@
+</div>
+
 <footer>
 	<nav class="footerNav">
 		<a href="index.php?page=info" tabindex="51">About</a>
