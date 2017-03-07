@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-07 16:25:31
+/* Smarty version 3.1.30, created on 2017-03-07 16:41:26
   from "/Applications/MAMP/htdocs/ProjetTLI1/templates/home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bed0ebad0c89_42520908',
+  'unifunc' => 'content_58bed4a6a4adb1_24274698',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0fa9e1dbe6b15bb6876e7f3a7e15c88c25f8fc58' => 
     array (
       0 => '/Applications/MAMP/htdocs/ProjetTLI1/templates/home.tpl',
-      1 => 1488900303,
+      1 => 1488901284,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bed0ebad0c89_42520908 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58bed4a6a4adb1_24274698 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
     <h1>Bienvenue !</h1>

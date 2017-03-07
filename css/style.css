@@ -49,6 +49,12 @@ h1#flux-titre {
     
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #create-account {
     margin-right: 70%;
 }
@@ -57,6 +63,11 @@ h1#flux-titre {
 	margin-top: 50px;
 	text-align: center;
 	overflow: auto;
+}
+
+#info {
+    margin: auto;
+    width: 80%;
 }
 
 .headerNav {
@@ -109,6 +120,7 @@ header {
 
 footer {
 	text-align: center;
+    margin-top: 2%;
 }
 
 /*CSS for the formulaire*/
