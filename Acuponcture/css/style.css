@@ -36,15 +36,15 @@ h1#flux-titre {
 
 #description {
     padding-right: 2%;
+    padding-left: 1%;
     width: 68%;
     float: left;    
 }
 
 #flux {
     float: right;
-    padding-left: 2%;
     width: 28%;
-    text-align: right;
+    text-align: left;
     vertical-align: top;    
     
 }
