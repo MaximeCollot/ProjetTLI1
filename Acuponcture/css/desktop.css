@@ -1,0 +1,27 @@
+body,h1,h2 {
+	font-family: arial, sans-serif;
+}
+
+h1#flux-titre {
+	text-align: right;
+}
+
+#description {
+	padding-right: 2%;
+	width: 68%;
+	float: left;	
+}
+
+#flux {
+	float: right;
+	padding-left: 2%;
+	width: 28%;
+	text-align: right;
+	vertical-align: top;	
+	
+}
+
+#create-account {
+	margin-right: 70%;
+}
+

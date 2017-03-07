@@ -2529,6 +2529,7 @@ ALTER TABLE `typepatho`
 
 CREATE TABLE `user` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `identifiant` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `mail` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
    PRIMARY KEY (`id`(10))
