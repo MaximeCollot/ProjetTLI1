@@ -1,7 +1,7 @@
 	
 function checkConfirmEmail(input) {
 	if (input.value != document.getElementById('email_addr').value) {
-		input.setCustomValidity('Mail incorrecte');
+		input.setCustomValidity('Les mails ne sont pas identiques');
         input.setAttribute("aria-invalid", true);
 	} else {
 		// le champ est valide : on réinitialise le message d'erreur
@@ -13,7 +13,7 @@ function checkConfirmEmail(input) {
 
 function checkConfirmPassword(input) {
 	if (input.value != document.getElementById('password').value) {
-		input.setCustomValidity('Password incorrecte');
+		input.setCustomValidity('Les mots de passe ne sont pas identiques');
         input.setAttribute("aria-invalid", true);
 	} else {
 		// le champ est valide : on réinitialise le message d'erreur
