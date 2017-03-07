@@ -1,8 +1,37 @@
+body {
+    margin: 0;
+    font-size: 15px;
+    width: 100%;
+    font-family: 'Verdana',sans-serif;
+}
 
 
+h1{
+    border-bottom: 1vh solid green;
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+h3{
+    text-align: left;
+}
+p{
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button, input, a {
+    font-family: 'Verdana',sans-serif;
+}
 
 h1#flux-titre {
-    text-align: right;
+    text-align: center;
 }
 
 #description {
@@ -24,96 +53,62 @@ h1#flux-titre {
     margin-right: 70%;
 }
 
-
-
-
-body {
-    margin: 0;
-    font-size: 15px;
-    width: 100%;
-}
-
-
-h1{
-	border-bottom: 1vh solid green;
-    text-align: center;
-}
-h2{
-    text-align: center;
-}
-h3{
-    text-align: left;
-}
-p{
-    text-align: justify;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-
-button, input, a {
-	font-family: 'Verdana',sans-serif;
-}
-
 #content {
-	margin-top: 50px;
-	text-align: center;
-	overflow: auto;
+    margin-top: 50px;
+    text-align: center;
+    overflow: auto;
 }
 
 .headerNav {
-	width: 100%;
-	background-color: green;
-	color: white;
-	height: 50px;
+    width: 100%;
+    background-color: green;
+    color: white;
+    height: 50px;
 }
 
 .headerNav a {
-	padding: 15px;
+    padding: 15px;
 }
 
 .headerNav a:hover {
-	background-color: white;
-	color: black;
+    background-color: white;
+    color: black;
 }
 
 .currentPage {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 header {
-	top: 0;
-	position: fixed;
-	width: 100%;
+    top: 0;
+    position: fixed;
+    width: 100%;
 }
 
 #connectBar {
     float: right;
     background-color: green;
-	color: white;
-	padding: 10px;
+    color: white;
+    padding: 10px;
 
 }
 
 .header-button-left {
-	float: left;
+    float: left;
 }
 
 .header-button-right {
-	float: right;
+    float: right;
 }
 
 #userMail {
-	float: right;
-	padding: 15px;
-	font-weight: bold;
+    float: right;
+    padding: 15px;
+    font-weight: bold;
 }
 
 footer {
-	text-align: center;
+    text-align: center;
     margin-top: 2vh;
 }
 
@@ -165,16 +160,16 @@ footer {
     color: black;
 }
 .footerNav { 
-	position:fixed;
-	width:100%;
-	bottom:0; /* stick to bottom */
-	background:green;
+    position:fixed;
+    width:100%;
+    bottom:0; /* stick to bottom */
+    background:green;
     color:white;
 }
 
 
 
 .footerNav a:hover {
-	background-color: white;
-	color: black;
+    background-color: white;
+    color: black;
 }

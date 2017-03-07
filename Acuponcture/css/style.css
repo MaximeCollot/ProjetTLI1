@@ -1,36 +1,8 @@
-
-
-
-h1#flux-titre {
-    text-align: right;
-}
-
-#description {
-    padding-right: 2%;
-    width: 68%;
-    float: left;    
-}
-
-#flux {
-    float: right;
-    padding-left: 2%;
-    width: 28%;
-    text-align: right;
-    vertical-align: top;    
-    
-}
-
-#create-account {
-    margin-right: 70%;
-}
-
-
-
-
 body {
     margin: 0;
     font-size: 15px;
     width: 100%;
+    font-family: 'Verdana',sans-serif;
 }
 
 
@@ -56,6 +28,29 @@ a {
 
 button, input, a {
 	font-family: 'Verdana',sans-serif;
+}
+
+h1#flux-titre {
+    text-align: center;
+}
+
+#description {
+    padding-right: 2%;
+    width: 68%;
+    float: left;    
+}
+
+#flux {
+    float: right;
+    padding-left: 2%;
+    width: 28%;
+    text-align: right;
+    vertical-align: top;    
+    
+}
+
+#create-account {
+    margin-right: 70%;
 }
 
 #content {
