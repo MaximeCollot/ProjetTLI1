@@ -16,9 +16,3 @@ function checkConfirmPassword(input) {
 		input.setCustomValidity('');
 	}
 }
-
-function createAccount(form){
-
-	//creer le compte dans la bdd
-
-}
