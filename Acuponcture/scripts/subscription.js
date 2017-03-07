@@ -1,7 +1,8 @@
-	
+
 function checkConfirmEmail(input) {
+	console.log('coucou');	
 	if (input.value != document.getElementById('email_addr').value) {
-		input.setCustomValidity('Mail incorrecte');
+		input.setCustomValidity('Les adresses mail ne correspondent pas');
 	} else {
 		// le champ est valide : on réinitialise le message d'erreur
 		input.setCustomValidity('');
@@ -10,15 +11,9 @@ function checkConfirmEmail(input) {
 
 function checkConfirmPassword(input) {
 	if (input.value != document.getElementById('password').value) {
-		input.setCustomValidity('Password incorrecte');
+		input.setCustomValidity('Les mots de passe ne correspondent pas');
 	} else {
 		// le champ est valide : on réinitialise le message d'erreur
 		input.setCustomValidity('');
 	}
-}
-
-function createAccount(form){
-
-	//creer le compte dans la bdd
-
 }
