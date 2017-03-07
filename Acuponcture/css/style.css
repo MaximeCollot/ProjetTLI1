@@ -32,9 +32,6 @@ button, input, a {
 	margin-top: 50px;
 	text-align: center;
 	overflow: auto;
-	height:auto !important; /* real browsers */
-	min-height:100%; /* real browsers */
-    padding:1em 1em 5em; /* bottom padding for footer */
 }
 
 .headerNav {
@@ -136,7 +133,6 @@ footer {
 .closebtn:hover {
     color: black;
 }
-
 .footerNav { 
 	position:fixed;
 	width:100%;
