@@ -37,6 +37,8 @@ if(isset($_SESSION['mail'])){
 }else{
     $mail = "";
 }
+
+// Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
         if(isset($_POST['password'])){
@@ -56,15 +58,22 @@ if(isset($_POST['connection'])){
 
 //création du compte utilisateur dans la BDD
 if(isset($_POST['inscription'])){
-    if(isset($_POST['email_addr'])){
-        if(isset($_POST['password'])){
-            if(accountcreate($pdo)){
-                echo ('compte créé');
+    if(isset($_POST['idperso'])){
+        if(isset($_POST['email_addr'])){
+            if(isset($_POST['password'])){
+                if(accountcreate($pdo)){
+                    $messageValidation = "Vous venez de créer un compte !";
+                }else{
+                    $messageErreur = "Ce compte existe déjà";
+                }
+            }else{
+                $messageErreur = "Vous n'avez pas renseigné votre mot de passe";
             }
         }else{
-            // alert erreur d'insertion BDD
-            $messageErreur = "Ce compte existe déjà";
+            $messageErreur = "Vous n'avez pas renseigné votre adresse mail";
         }
+    }else{
+        $messageErreur = "Vous n'avez pas renseigné d'identifiant";
     }
 }
     
@@ -106,6 +115,10 @@ if (isset($messageErreur)) {
     $smarty->assign('messageErreur', $messageErreur);
     $smarty->display('erreur.tpl');
 }
+if (isset($messageValidation)) {
+    $smarty->assign('messageValidation', $messageValidation);
+    $smarty->display('validation.tpl');
+}
 $smarty->display($template);
 
     include 'Templates/footer.tpl';
@@ -118,7 +131,7 @@ $smarty->display($template);
     }
 
     function accountcreate($pdo){
-        $result = $pdo->createUser($_POST['email_addr'], $_POST['password']);
+        $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
         return $result;
     }
 ?>

@@ -110,7 +110,14 @@ footer {
 
 .alert {
     padding: 20px;
-    background-color: #f44336;
+    background-color: #F44336;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.confirm {
+    padding: 20px;
+    background-color: #4CAF50;
     color: white;
     margin-bottom: 15px;
 }
