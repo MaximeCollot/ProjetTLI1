@@ -31,19 +31,43 @@
         }
     }
 
-    //création du compte utilisateur dans la BDD
-    if(isset($_POST['inscription'])){
-        if(isset($_POST['email_addr'])){
-            if(isset($_POST['password'])){
-                if(accountcreate($pdo)){
-                    echo ('compte créé');
-                }
+// Si l'utilisateur se connecte, on vérifie ses identifiants
+if(isset($_SESSION['mail'])){
+    $mail = $_SESSION['mail'];
+}else{
+    $mail = "";
+}
+if(isset($_POST['connection'])){
+    if(isset($_POST['mail'])){
+        if(isset($_POST['password'])){
+            if(authentication($pdo)){
+                $_SESSION['mail'] = $_POST['mail'];
+                $mail = $_POST['mail'];
             }else{
-                // alert erreur d'insertion BDD
-                echo('compte non créé');
+                $messageErreur = "Le couple identifiant/mot de passe n'est pas valide";
             }
+        }else{
+            $messageErreur = "Vous n'avez pas renseigné votre mot de passe";
+        }
+    }else{
+        $messageErreur = "Vous n'avez pas renseigné votre identifiant";
+    }
+}
+
+//création du compte utilisateur dans la BDD
+if(isset($_POST['inscription'])){
+    if(isset($_POST['email_addr'])){
+        if(isset($_POST['password'])){
+            if(accountcreate($pdo)){
+                echo ('compte créé');
+            }
+        }else{
+            // alert erreur d'insertion BDD
+            echo('compte non créé');
         }
     }
+}
+    
 
     $smarty->assign('mail', $mail);
 
@@ -77,8 +101,12 @@
 
     $smarty->assign('page', $page);
 
-    $smarty->display('header.tpl');
-    $smarty->display($template);
+$smarty->display('header.tpl');
+if (isset($messageErreur)) {
+    $smarty->assign('messageErreur', $messageErreur);
+    $smarty->display('erreur.tpl');
+}
+$smarty->display($template);
 
     include 'Templates/footer.tpl';
 
