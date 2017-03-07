@@ -1,6 +1,6 @@
 <h1>Inscription</h1>
 
-<form class="form-subscribe" method="post" action="index.php?page={$page}" id="formulaire">
+<form class="form-subscribe" method="post" action="index.php?page=home" id="formulaire">
 	
 	<div class="input-group">
 		<label class="label-suscribe" for="idperso">Identifiant&nbsp;:</label>
@@ -33,7 +33,7 @@
 		{/literal}
 	</div>
 	<div class="input-group">
-		<input class="input-subscripe" type="submit" value="inscription" tabindex="15" /> 
+		<input class="input-subscripe" type="submit" name="inscription" tabindex="15" /> 
 	</div>
 	
 </form>

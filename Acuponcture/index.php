@@ -13,10 +13,10 @@ if(isset($_GET['deconnect'])){
 }
 
 // Si l'utilisateur se connecte, on vérifie ses identifiants
-if(isset($_SESSION['mail'])){
-    $mail = $_SESSION['mail'];
+if(isset($_SESSION['identifiant'])){
+    $identifiant = $_SESSION['identifiant'];
 }else{
-    $mail = "";
+    $identifiant = "";
 }
 
 // Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
@@ -58,7 +58,7 @@ if(isset($_POST['inscription'])){
     }
 }
 
-$smarty->assign('mail', $mail);
+$smarty->assign('identifiant', $identifiant);
 
 $template = "home.tpl";
 if (isset($_GET['page'])) {
@@ -105,13 +105,12 @@ $smarty->display($template);
 
 include 'Templates/footer.tpl';
 
-
-function accountcreate($pdo){
-    $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
+function authentication($pdo){
+    $result = $pdo->getUser($_POST['mail'], $_POST['password']);
     return $result;
 }
 
-function createUser($pdo){
+function accountcreate($pdo){
     $result = $pdo->createUser($_POST['idperso'], $_POST['email_addr'], $_POST['password']);
     return $result;
 }

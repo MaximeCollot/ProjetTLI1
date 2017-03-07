@@ -12,17 +12,18 @@
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	    <script type='text/javascript' src='scripts/header.js'></script>
+	    <script type='text/javascript' src='scripts/subscribe.js'></script>
 	</head>
 	<body>
 	<header>
 		<nav class="headerNav">
 	                <a href="index.php?page=home" class="header-button-left currentPage" tabindex="1" accesskey="w">Accueil</a>
 	                <a href="index.php?page=patho" class="header-button-left" tabindex="10" accesskey="s">Symptomes</a>
-	                {if $mail == ''}
+	                {if $identifiant == ''}
 	                	<a href="#" onclick="showConnect()" class="header-button-right" tabindex="2" accesskey="c">Connexion</a>
 	                	<a href="index.php?page=subscribe" class="header-button-right" tabindex="3" accesskey="i">Inscription</a>
 	            	{else}
-	            		<div id="userMail">{$mail}</div>
+	            		<div id="identifiant">{$identifiant}</div>
 	            		<a href="index.php?page={$page}&deconnect=true" class="header-button-right" tabindex="5" accesskey="d">Déonnexion</a>
 	            	{/if}
 		</nav>    
