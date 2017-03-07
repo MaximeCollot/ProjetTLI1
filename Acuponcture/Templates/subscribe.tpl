@@ -1,7 +1,7 @@
 <h1>Inscription</h1>
 <script type='text/javascript' src='scripts/subscription.js'></script>
 
-<form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action="lib/main.php?variable=truc" id="formulaire">
+<form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action='index.php?page=home' id="formulaire">
 	
 		<div class="input-group">
 			<label class="label-suscribe" for="idperso">Identifiant&nbsp;:</label>
@@ -26,7 +26,7 @@
 			oninput="checkConfirmPassword(this)">
 		</div>
 		<div class="input-group">
-			<input class="input-subscripe" type="submit" value="inscription" /> 
+			<input class="input-subscripe" type="submit" name="inscription" /> 
 		</div>
 	
 </form>

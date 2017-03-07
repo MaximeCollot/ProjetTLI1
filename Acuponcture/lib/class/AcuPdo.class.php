@@ -59,4 +59,18 @@ class AcuPdo {
             return false;
         }
     }
+
+    public function createUser($mail, $password){
+        if (!isset($this->_db)) {
+            $this->getdb();
+        }
+        $query = $this->_db->prepare('INSERT INTO user (mail, password) VALUES (:mail, :password)');
+        $result = $query->execute((array(':mail' => $mail, ':password' => $password)));
+
+        if ($result){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
