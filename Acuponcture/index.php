@@ -70,7 +70,10 @@ if (isset($_GET['page'])) {
         break;
 
         case 'patho':
-        $list_patho = $pdo->getpatho();
+        //$list_patho = $pdo->getpatho();
+        $list_patho = $pdo->getAll();
+        // fabriquer l'arborescence en même que création de Pathologie (1 par élément sauf si même Patho pour plusieurs symptome)
+        // afficher arborescence
         $smarty->assign('list_patho', $list_patho);
         $template = "patho.tpl";
         break;
@@ -103,6 +106,7 @@ if (isset($messageValidation)) {
 }
 
 $smarty->display($template);
+var_dump($list_patho);
 
 include 'Templates/footer.tpl';
 
