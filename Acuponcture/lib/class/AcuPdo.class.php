@@ -6,7 +6,6 @@
  * Time: 11:00
  */
 
-
 class AcuPdo {
 
     public static $_instance;
@@ -59,6 +58,33 @@ class AcuPdo {
         }else{
             return false;
         }
+    }
+
+    public function getAll(){
+        if (!isset($this->_db)) {
+            $this->getdb();
+        }
+        $query = $this->_db->prepare('SELECT patho.mer as CODE_MERIDIEN,
+                                        patho.type as TYPE_PATHO,
+                                        patho.desc as DESCRIPTION_PATHO,
+                                        meridien.nom as NAME_MERIDIEN,
+                                        meridien.element as ELEMENT_MERIDIEN,
+                                        meridien.yin as YIN_MERIDIEN,
+                                        typepatho.nom as NAME_TYPEPATHO,
+                                        typepatho.carac1 as CARAC1_TYPEPATHO,
+                                        typepatho.carac2 as CARAC2_TYPEPATHO,
+                                        symptome.desc as DESC_SYMPTOME
+
+                                        FROM patho
+                                        LEFT JOIN meridien ON patho.mer = meridien.code
+                                        LEFT JOIN typepatho ON patho.type = typepatho.code
+                                        LEFT JOIN symptPatho ON symptPatho.idP = patho.idP
+                                        LEFT JOIN symptome ON symptome.idS = symptPatho.idS
+
+                                        ORDER BY NAME_TYPEPATHO;');
+        $query->execute();
+        return $query->fetchAll();
+
     }
 
     public function createUser($identifiant, $mail, $password){

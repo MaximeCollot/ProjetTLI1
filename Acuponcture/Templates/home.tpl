@@ -1,8 +1,7 @@
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
-    <h1>Bienvenu(e)!</h1>
+    <h1>Bienvenue !</h1>
     <p>Les acupuncteurs du dimanche vous souhaitent la bienvenue sur leur site. Vous pourrez consulter ici les différentes pathologies liées au déséquilibre de vos méridiens et les symptomes associés.
     </p>
-    <p></p>
 
     <h2>Pour commencer, qu'est-ce que l'acupuncture ?</h2>
 
