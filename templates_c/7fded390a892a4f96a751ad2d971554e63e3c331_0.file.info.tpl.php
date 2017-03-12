@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-07 16:40:37
-  from "/Applications/MAMP/htdocs/ProjetTLI1/templates/info.tpl" */
+/* Smarty version 3.1.30, created on 2017-03-12 23:28:28
+  from "C:\Users\Maxime\Documents\ProjetTLI\templates\info.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bed475d729e0_38950455',
+  'unifunc' => 'content_58c5d99c2c9e43_56879644',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'bb146e0daeeac941be6540b5d258848c7eec1f1c' => 
+    '7fded390a892a4f96a751ad2d971554e63e3c331' => 
     array (
-      0 => '/Applications/MAMP/htdocs/ProjetTLI1/templates/info.tpl',
-      1 => 1488901235,
+      0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\info.tpl',
+      1 => 1489333959,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bed475d729e0_38950455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c5d99c2c9e43_56879644 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1>About</h1>
 

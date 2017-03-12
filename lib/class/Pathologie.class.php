@@ -33,7 +33,7 @@ class Pathologie
         $this->_caracteristiques = $_caracteristiques;
         $this->_meridien = $_meridien;
         $this->_description = $_description;
-        $this->_symptomes = $_symptomes;
+        $this->_symptomes = array($_symptomes);
     }
 
 
@@ -114,7 +114,7 @@ class Pathologie
      */
     public function setSymptomes($symptomes)
     {
-        array_push($this->_symptomes, $symptomes);
+        $this->_symptomes[] = $symptomes;
     }
 
 

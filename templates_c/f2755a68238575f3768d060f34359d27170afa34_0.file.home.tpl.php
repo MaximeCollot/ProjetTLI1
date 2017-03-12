@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-07 15:46:56
-  from "/Applications/MAMP/htdocs/ProjetTLI1/Acuponcture/templates/home.tpl" */
+/* Smarty version 3.1.30, created on 2017-03-12 16:03:49
+  from "C:\Users\Maxime\Documents\ProjetTLI\templates\home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58bec7e03ee827_98464823',
+  'unifunc' => 'content_58c5716517f7d3_77312047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '12ad5d19703924cdcd6bb342f2a21af8f829e976' => 
+    'f2755a68238575f3768d060f34359d27170afa34' => 
     array (
-      0 => '/Applications/MAMP/htdocs/ProjetTLI1/Acuponcture/templates/home.tpl',
-      1 => 1488898008,
+      0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\home.tpl',
+      1 => 1489334270,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58bec7e03ee827_98464823 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c5716517f7d3_77312047 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
     <h1>Bienvenue !</h1>
+    
     <p>Les acupuncteurs du dimanche vous souhaitent la bienvenue sur leur site. Vous pourrez consulter ici les différentes pathologies liées au déséquilibre de vos méridiens et les symptomes associés.</p>
- 
 
     <h2>Pour commencer, qu'est-ce que l'acupuncture ?</h2>
 

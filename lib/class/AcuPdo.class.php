@@ -6,6 +6,8 @@
  * Time: 11:00
  */
 
+require("lib/class/Pathologie.class.php");
+
 class AcuPdo {
 
     public static $_instance;
@@ -38,11 +40,30 @@ class AcuPdo {
         if (!isset($this->_db)) {
             $this->getdb();
         }
-        $query = $this->_db->prepare('SELECT `desc` FROM patho');
+        $query = $this->_db->prepare('SELECT patho.mer as CODE_MERIDIEN,
+                                        patho.type as TYPE_PATHO,
+                                        patho.desc as DESCRIPTION_PATHO,
+                                        meridien.nom as NAME_MERIDIEN,
+                                        meridien.element as ELEMENT_MERIDIEN,
+                                        meridien.yin as YIN_MERIDIEN,
+                                        typepatho.nom as NAME_TYPEPATHO,
+                                        typepatho.carac1 as CARAC1_TYPEPATHO,
+                                        typepatho.carac2 as CARAC2_TYPEPATHO,
+                                        symptome.desc as DESC_SYMPTOME
+
+                                        FROM patho
+                                        LEFT JOIN meridien ON patho.mer = meridien.code
+                                        LEFT JOIN typepatho ON patho.type = typepatho.code
+                                        LEFT JOIN symptPatho ON symptPatho.idP = patho.idP
+                                        LEFT JOIN symptome ON symptome.idS = symptPatho.idS
+
+                                        ORDER BY NAME_TYPEPATHO;');
         $query->execute();
+        $result = $query->fetchAll();
+        $pathos = $this->setPathos($result);
 
 
-        return $query;
+        return $pathos;
     }
 
     public function getUser($mail, $password){
@@ -101,5 +122,57 @@ class AcuPdo {
             $result = $query->execute((array(':identifiant' => $identifiant, ':mail' => $mail, ':password' => $password)));
             return true;
         }
+    }
+
+    public function setPathos($pathos) {
+        $pathologies = array();
+        foreach ($pathos as $patho) {
+
+            if(!array_key_exists($patho['NAME_TYPEPATHO'], $pathologies)){
+                $pathologies[$patho['NAME_TYPEPATHO']] = array();
+            }
+            if (!array_key_exists($patho['NAME_MERIDIEN'], $pathologies[$patho['NAME_TYPEPATHO']])){
+                $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']] = array();
+            }
+            if ($patho['CARAC1_TYPEPATHO'] == '' && $patho['CARAC2_TYPEPATHO'] == ''){
+                if (!array_key_exists('neant', $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']])){
+                    $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'] = array();
+                }
+                $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'] = $this->setSymptome($pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'], $patho);
+            }else{
+                if ($patho['CARAC2_TYPEPATHO'] == ''){
+                    if (!array_key_exists($patho['CARAC1_TYPEPATHO'], $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']])){
+                        $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']][$patho['CARAC1_TYPEPATHO']] = array();
+                    }
+                    $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']][$patho['CARAC1_TYPEPATHO']] = $this->setSymptome($pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']][$patho['CARAC1_TYPEPATHO']], $patho);
+                }else{
+                    $carac1 = $patho['CARAC1_TYPEPATHO'];
+                    $carac2 = $patho['CARAC2_TYPEPATHO'];
+                    if (!array_key_exists("$carac1/$carac2", $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']])){
+                        $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"] = array();
+                    }
+                    $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"] = $this->setSymptome($pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"], $patho);
+                }
+            }
+        }
+        return ($pathologies);
+    }
+
+    public function setSymptome($array,$patho){
+        $find = false;
+        foreach ($array as $patho_item) {
+            if ($patho_item->getDescription() == $patho['DESCRIPTION_PATHO']){
+                $patho_item->setSymptomes($patho['DESC_SYMPTOME']);
+                $find = true;
+            }
+        }
+        if (!$find){
+            $array[] = new Pathologie($patho['NAME_TYPEPATHO'],
+                                        array($patho['CARAC1_TYPEPATHO'],$patho['CARAC2_TYPEPATHO']),
+                                        $patho['NAME_MERIDIEN'],
+                                        $patho['DESCRIPTION_PATHO'],
+                                        $patho['DESC_SYMPTOME']);
+        }
+        return $array;
     }
 }

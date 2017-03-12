@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
     width: 100%;
     font-family: 'Verdana',sans-serif;
 }
@@ -13,7 +13,7 @@ h1{
 h2{
     text-align: center;
 }
-h3{
+h3#info{
     text-align: left;
 }
 p{
@@ -60,7 +60,7 @@ img {
 }
 
 #content {
-	margin-top: 50px;
+	margin-top: 45px;
 	text-align: center;
 	overflow: auto;
 }
@@ -74,11 +74,11 @@ img {
 	width: 100%;
 	background-color: green;
 	color: white;
-	height: 50px;
+	height: 45px;
 }
 
 .headerNav a {
-	padding: 15px;
+	padding: 14px;
 }
 
 .headerNav a:hover {
@@ -183,4 +183,32 @@ footer {
 .footerNav a:hover {
 	background-color: white;
 	color: black;
+}
+
+.typePatho {
+    width: 100%;
+    overflow: auto;
+}
+
+.meridien {
+    vertical-align: top;
+    display: inline-block;
+    margin: 5px;
+    border: lightgreen;
+    border-style: solid;
+}
+
+.meridien h3 {
+    background-color: lightgreen;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.meridien h5 {
+    margin: 10px;
+}
+
+.meridien p {
+    text-align: center;
+    margin: 5px
 }
