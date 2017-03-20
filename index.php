@@ -71,6 +71,12 @@ if (isset($_GET['page'])) {
 
         case 'patho':
         $list_patho = $pdo->getpatho();
+        $type = $pdo->getListType();
+        $smarty->assign('type', $type);
+        $meridien = $pdo->getListMeridien();
+        $smarty->assign('meridien', $meridien);
+        $caracteristique = $pdo->getListCaracteristique();
+        $smarty->assign('caracteristique', $caracteristique);
         //$list_patho = $pdo->getAll();
         // fabriquer l'arborescence en même que création de Pathologie (1 par élément sauf si même Patho pour plusieurs symptome)
         // afficher arborescence
