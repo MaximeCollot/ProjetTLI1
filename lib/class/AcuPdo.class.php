@@ -12,15 +12,9 @@ class AcuPdo {
 
     public static $_instance;
     private $_db = null;
-    public $typePatho;
-    public $meridien;
-    public $caracteristiques;
 
     protected function __construct()
     {
-        $this->typePatho = array('Tous');
-        $this->meridien = array('Tous');
-        $this->caracteristiques = array('Tous');
     }
 
     public static function getinstance()
@@ -67,6 +61,8 @@ class AcuPdo {
         $query->execute();
         $result = $query->fetchAll();
         $pathos = $this->setPathos($result);
+
+
         return $pathos;
     }
 
@@ -112,18 +108,6 @@ class AcuPdo {
 
     }
 
-    public function getListType(){
-        return $this->typePatho;
-    }
-
-    public function getListMeridien(){
-        return $this->meridien;
-    }
-
-    public function getListCaracteristique(){
-        return $this->caracteristiques;
-    }
-
     public function createUser($identifiant, $mail, $password){
         if (!isset($this->_db)) {
             $this->getdb();
@@ -147,25 +131,14 @@ class AcuPdo {
             if(!array_key_exists($patho['NAME_TYPEPATHO'], $pathologies)){
                 $pathologies[$patho['NAME_TYPEPATHO']] = array();
             }
-            if (!in_array($patho['NAME_TYPEPATHO'], $this->typePatho)){
-                $this->typePatho[] = $patho['NAME_TYPEPATHO'];
-            }
-
             if (!array_key_exists($patho['NAME_MERIDIEN'], $pathologies[$patho['NAME_TYPEPATHO']])){
                 $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']] = array();
             }
-            if (!in_array($patho['NAME_MERIDIEN'], $this->meridien)){
-                $this->meridien[] = $patho['NAME_MERIDIEN'];
-            }
-
             if ($patho['CARAC1_TYPEPATHO'] == '' && $patho['CARAC2_TYPEPATHO'] == ''){
                 if (!array_key_exists('neant', $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']])){
                     $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'] = array();
                 }
                 $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'] = $this->setSymptome($pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]['neant'], $patho);
-                if (!in_array('neant', $this->caracteristiques)){
-                    $this->caracteristiques[] = 'neant';
-                }
             }else{
                 if ($patho['CARAC2_TYPEPATHO'] == ''){
                     if (!array_key_exists($patho['CARAC1_TYPEPATHO'], $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']])){
@@ -179,9 +152,6 @@ class AcuPdo {
                         $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"] = array();
                     }
                     $pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"] = $this->setSymptome($pathologies[$patho['NAME_TYPEPATHO']][$patho['NAME_MERIDIEN']]["$carac1/$carac2"], $patho);
-                }
-                if (!in_array($patho['CARAC1_TYPEPATHO'], $this->caracteristiques)){
-                    $this->caracteristiques[] = $patho['CARAC1_TYPEPATHO'];
                 }
             }
         }
