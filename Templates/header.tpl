@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width: 640px)" />
 
 	<script type='text/javascript' src='scripts/header.js'></script>
-	<script type='text/javascript' src='scripts/pathologies.js'></script>
 </head>
 <body>
 	<header>

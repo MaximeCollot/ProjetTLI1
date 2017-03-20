@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 16:11:49
+/* Smarty version 3.1.30, created on 2017-03-20 17:10:12
   from "/Applications/MAMP/htdocs/templates/home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58cff13547ac55_60478496',
+  'unifunc' => 'content_58cffee4415f87_22014760',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec717321c7734da4ced2ddb7b0133c12afb4565' => 
     array (
       0 => '/Applications/MAMP/htdocs/templates/home.tpl',
-      1 => 1490022678,
+      1 => 1490025968,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58cff13547ac55_60478496 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58cffee4415f87_22014760 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
     <h1>Bienvenue !</h1>
@@ -34,10 +34,8 @@ function content_58cff13547ac55_60478496 (Smarty_Internal_Template $_smarty_tpl)
     <img id="acupuncture-home-img" src="img/acupuncture.png" alt="illustration acupuncture">
 </div>
 
-<div id = "flux">
+<div id = "flux" clas="fluxRSS">
     <h1 id="flux-titre">Flux RSS</h1>
-    <?php echo $_smarty_tpl->tpl_vars['rss']->value;?>
-
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rss']->value, 'itemRSS');
 if ($_from !== null) {
@@ -45,10 +43,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['itemRSS']->value) {
 ?>
         <a href=<?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getLien();?>
  ><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getTitre();?>
-</p>
+</a>
         <p><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getDesc();?>
 </p>
-        <p><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getDate();?>
+        <p class="date"><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getDate();?>
 </p>
     <?php
 }

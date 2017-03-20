@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 15:40:23
+/* Smarty version 3.1.30, created on 2017-03-12 16:03:49
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58cff7e70b9575_99171975',
+  'unifunc' => 'content_58c57165166783_01389042',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '31ab51048056d3f9e64b636332fed9b0bb0f23ba' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\header.tpl',
-      1 => 1490024418,
+      1 => 1489333959,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58cff7e70b9575_99171975 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c57165166783_01389042 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html >
 <html lang="fr">
@@ -33,9 +33,6 @@ function content_58cff7e70b9575_99171975 (Smarty_Internal_Template $_smarty_tpl)
 
 	<?php echo '<script'; ?>
  type='text/javascript' src='scripts/header.js'><?php echo '</script'; ?>
->
-	<?php echo '<script'; ?>
- type='text/javascript' src='scripts/pathologies.js'><?php echo '</script'; ?>
 >
 </head>
 <body>

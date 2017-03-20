@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 16:09:55
+/* Smarty version 3.1.30, created on 2017-03-12 16:03:49
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58cffed3be50f7_10255733',
+  'unifunc' => 'content_58c5716517f7d3_77312047',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2755a68238575f3768d060f34359d27170afa34' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\home.tpl',
-      1 => 1490025801,
+      1 => 1489334270,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58cffed3be50f7_10255733 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58c5716517f7d3_77312047 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
     <h1>Bienvenue !</h1>
@@ -34,28 +34,8 @@ function content_58cffed3be50f7_10255733 (Smarty_Internal_Template $_smarty_tpl)
     <img id="acupuncture-home-img" src="img/acupuncture.png" alt="illustration acupuncture">
 </div>
 
-<div id = "flux" clas="fluxRSS">
+<div id = "flux">
     <h1 id="flux-titre">Flux RSS</h1>
-    <?php echo $_smarty_tpl->tpl_vars['rss']->value;?>
-
-    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rss']->value, 'itemRSS');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['itemRSS']->value) {
-?>
-        <a href=<?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getLien();?>
- ><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getTitre();?>
-</a>
-        <p><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getDesc();?>
-</p>
-        <p><?php echo $_smarty_tpl->tpl_vars['itemRSS']->value->getDate();?>
-</p>
-    <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-
+    <p>Ici se situera plus tard un flux rss</p>
 </div><?php }
 }

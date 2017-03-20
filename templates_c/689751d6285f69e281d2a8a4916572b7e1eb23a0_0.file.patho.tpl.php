@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 15:53:32
+/* Smarty version 3.1.30, created on 2017-03-12 23:45:43
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\patho.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58cffafc7979f5_84204088',
+  'unifunc' => 'content_58c5dda709a652_26008138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '689751d6285f69e281d2a8a4916572b7e1eb23a0' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\patho.tpl',
-      1 => 1490025208,
+      1 => 1489362340,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58cffafc7979f5_84204088 (Smarty_Internal_Template $_smarty_tpl) {
-if (!is_callable('smarty_function_html_options')) require_once 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\lib\\smarty\\plugins\\function.html_options.php';
-if (!is_callable('smarty_function_html_checkboxes')) require_once 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\lib\\smarty\\plugins\\function.html_checkboxes.php';
+function content_58c5dda709a652_26008138 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1>Pathologies</h1>
-	<form action="index.php?page=patho" method="post">
-			<?php echo smarty_function_html_options(array('name'=>'type','options'=>$_smarty_tpl->tpl_vars['type']->value),$_smarty_tpl);?>
-
-<!-- 		<?php echo smarty_function_html_options(array('name'=>'meridien','options'=>$_smarty_tpl->tpl_vars['meridien']->value),$_smarty_tpl);?>
-
-		<?php echo smarty_function_html_checkboxes(array('name'=>'caracteristique','options'=>$_smarty_tpl->tpl_vars['caracteristique']->value),$_smarty_tpl);?>
- -->
-		<input type="submit" name="Filtrer" value="Filtrer">
-	</form>
 	<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['list_patho']->value, 'categorie', false, 'key');
 if ($_from !== null) {

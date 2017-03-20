@@ -45,7 +45,8 @@ h1#flux-titre {
     float: right;
     width: 28%;
     text-align: left;
-    vertical-align: top;    
+    vertical-align: top;  
+    padding-right: 1%;
     
 }
 
@@ -211,4 +212,23 @@ footer {
 .meridien p {
     text-align: center;
     margin: 5px
+}
+
+/*CSS for Flux RSS*/
+
+#flux a{
+	border-bottom: 2px solid green;
+    text-align: left;    
+    font-weight: 600;
+}
+
+#flux p{
+    text-align: justify;    
+}
+
+#flux p.date{
+    font-style: italic;
+    text-align: right;
+    font-size: 80%;
+
 }
