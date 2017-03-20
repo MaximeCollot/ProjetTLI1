@@ -22,6 +22,10 @@ if(isset($_SESSION['identifiant'])){
     $identifiant = "";
 }
 
+if(isset($_POST['type'])){
+    echo $_POST['type'];
+}
+
 // Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
