@@ -12,7 +12,6 @@
 
 <div id = "flux" clas="fluxRSS">
     <h1 id="flux-titre">Flux RSS</h1>
-    {$rss}
     {foreach from=$rss item=itemRSS}
         <a href={$itemRSS->getLien()} >{$itemRSS->getTitre()}</a>
         <p>{$itemRSS->getDesc()}</p>
