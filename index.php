@@ -22,6 +22,9 @@ if(isset($_SESSION['identifiant'])){
     $identifiant = "";
 }
 
+if(isset($_POST['type'])){
+}
+
 // Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
@@ -76,6 +79,12 @@ if (isset($_GET['page'])) {
 
         case 'patho':
         $list_patho = $pdo->getpatho();
+        $type = $pdo->getListType();
+        $smarty->assign('type', $type);
+        $meridien = $pdo->getListMeridien();
+        $smarty->assign('meridien', $meridien);
+        $caracteristique = $pdo->getListCaracteristique();
+        $smarty->assign('caracteristique', $caracteristique);
         //$list_patho = $pdo->getAll();
         // fabriquer l'arborescence en même que création de Pathologie (1 par élément sauf si même Patho pour plusieurs symptome)
         // afficher arborescence
