@@ -2,8 +2,11 @@
 session_start();
 require("lib/class/AcuPdo.class.php");
 require("lib/smarty/Smarty.class.php");
+require("lib/class/FluxRSS.class.php");
 // On inclut la classe Smarty
 $smarty = new Smarty();
+// On inclut la classe fluxRSS
+$fluxRSS = new FluxRSS();
 // On initialise la connexion à la bdd
 $pdo =  AcuPdo::getinstance();
 
@@ -67,6 +70,8 @@ if (isset($_GET['page'])) {
 
     switch ($page){
         case 'home':
+        $rss= $fluxRSS->getFluxrss();
+        $smarty->assign('rss', $rss);
         break;
 
         case 'patho':
