@@ -1,13 +1,5 @@
 <?php
 
-
-/**
- * Created by PhpStorm.
- * User: Nardin
- * Date: 20/03/2017
- * Time: 14:54
- */
-
 class ElementRSS {
     private $_date;
 
@@ -95,8 +87,6 @@ class ElementRSS {
     {
         $this->_lien = $lien;
     }
-
-    
 
 
 }

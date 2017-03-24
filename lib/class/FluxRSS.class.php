@@ -8,16 +8,20 @@ class FluxRSS {
   public function getFluxrss() {
 
     $cache_time = 3600*24; // 24 hours
-    $cache_file = $_SERVER['DOCUMENT_ROOT'].'/cache/test.rss';
-    $timedif = @(time() - filemtime($cache_file));
-    if (file_exists($cache_file) && $timedif < $cache_time) {
-      $string = file_get_contents($cache_file);
+    $cache_file = $_SERVER['DOCUMENT_ROOT'].'/ProjetTLI1/cache/test.rss';
+    
+    if (file_exists($cache_file)) {
+      $timedif = @(time() - filemtime($cache_file));
+      if ($timedif < $cache_time) {
+        $string = file_get_contents($cache_file);
+      }
+      
     } else {
       $string = file_get_contents('http://www.santepubliquefrance.fr/content/view/rss/426');
-      if ($f = @fopen($cache_file, 'w')) {
-        fwrite ($f, $string, strlen($string));
-        fclose($f);
-      }
+      $f = fopen($cache_file, 'w');
+      fwrite ($f, $string, strlen($string));
+      fclose($f);
+      
     }
 
     $count = 0;
