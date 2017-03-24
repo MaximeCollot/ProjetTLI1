@@ -1,5 +1,5 @@
 
-Acuponcture/templates_c/*
+templates_c/*
 
 # Compiled source #
 ###################
@@ -38,9 +38,3 @@ Acuponcture/templates_c/*
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-templates_c/0fa9e1dbe6b15bb6876e7f3a7e15c88c25f8fc58_0.file.home.tpl.php
-
-templates_c/39652d8a45e9b7aedb80d90b39d4ad74fa6a699a_0.file.patho.tpl.php
-
-templates_c/e7abda279dcfac7a2008e35303293167963a90dc_0.file.header.tpl.php
