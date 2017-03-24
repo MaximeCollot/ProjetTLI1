@@ -25,7 +25,7 @@ class FluxRSS {
     }
 
     $count = 0;
-    $max = 3;
+    $max = 5;
 
     $flux = simplexml_load_string($string);
     
