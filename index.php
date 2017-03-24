@@ -22,9 +22,6 @@ if(isset($_SESSION['identifiant'])){
     $identifiant = "";
 }
 
-if(isset($_POST['type'])){
-}
-
 // Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
@@ -79,12 +76,53 @@ if (isset($_GET['page'])) {
 
         case 'patho':
         $list_patho = $pdo->getpatho();
+        //var_dump($list_patho);
         $type = $pdo->getListType();
-        $smarty->assign('type', $type);
-        $meridien = $pdo->getListMeridien();
-        $smarty->assign('meridien', $meridien);
-        $caracteristique = $pdo->getListCaracteristique();
-        $smarty->assign('caracteristique', $caracteristique);
+
+        // On assigne les variables issues du flitrage
+        if (isset($_POST['typeFilter'])){
+            $typeSelected = $_POST['typeFilter'];
+        }else{
+            $typeSelected = 'Tous';
+        }
+        if (isset($_POST['meridienFilter'])){
+            $meridienSelected = $_POST['meridienFilter'];
+        }else{
+            $meridienSelected = 'Tous';
+        }
+        if (isset($_POST['caracteristiqueFilter'])){
+            $caracteristiqueSelected = $_POST['caracteristiqueFilter'];
+        }else{
+            $caracteristiqueSelected = 'Tous';
+        }
+
+        // On défini les tableaux des listes déroulantes
+        if($typeSelected != 'Tous'){
+            $meridien = array('Tous');
+            $meridien = array_merge($meridien,array_keys($list_patho[$_POST['typeFilter']]));
+        }else{
+            $meridien = $pdo->getListMeridien();
+        }
+        if (isset($_POST['meridienFilter']) && !in_array($_POST['meridienFilter'], $meridien)){
+            $meridienSelected = 'Tous';
+        }
+        if($typeSelected != 'Tous' && $meridienSelected != 'Tous'){
+            $caracteristique = array('Tous');
+            $caracteristique = array_merge($caracteristique,array_keys($list_patho[$_POST['typeFilter']][$_POST['meridienFilter']]));
+        }else{
+            $caracteristique = $pdo->getListCaracteristique();
+        }
+        if (isset($_POST['caracteristiqueFilter']) && !in_array($_POST['caracteristiqueFilter'], $caracteristique)){
+            $caracteristiqueSelected = 'Tous';
+        }
+
+        $smarty->assign('typeListFilter', $type);
+        $smarty->assign('meridienListFilter', $meridien);
+        $smarty->assign('caracteristiqueListFilter', $caracteristique);
+
+        $smarty->assign('typeSelected',$typeSelected);
+        $smarty->assign('meridienSelected',$meridienSelected);
+        $smarty->assign('caracteristiqueSelected', $caracteristiqueSelected);
         //$list_patho = $pdo->getAll();
         // fabriquer l'arborescence en même que création de Pathologie (1 par élément sauf si même Patho pour plusieurs symptome)
         // afficher arborescence
@@ -121,7 +159,7 @@ if (isset($messageValidation)) {
 
 $smarty->display($template);
 
-include 'Templates/footer.tpl';
+$smarty->display('footer.tpl');
 
 function authentication($pdo){
     $result = $pdo->getUser($_POST['mail'], $_POST['password']);
