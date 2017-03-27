@@ -10,7 +10,7 @@
     <img id="acupuncture-home-img" src="img/acupuncture.png" alt="illustration acupuncture">
 </div>
 
-<div id = "flux" clas="fluxRSS">
+<div id = "flux" class="fluxRSS">
     <h1 id="flux-titre">Flux RSS</h1>
     {foreach from=$rss item=itemRSS}
         <a href={$itemRSS->getLien()} >{$itemRSS->getTitre()}</a>

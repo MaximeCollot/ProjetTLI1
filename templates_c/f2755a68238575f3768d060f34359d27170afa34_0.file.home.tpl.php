@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 16:34:16
+/* Smarty version 3.1.30, created on 2017-03-27 00:22:21
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d00488e7af29_06657241',
+  'unifunc' => 'content_58d85b3d4b3ba6_72804555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2755a68238575f3768d060f34359d27170afa34' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\home.tpl',
-      1 => 1490027572,
+      1 => 1490574127,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d00488e7af29_06657241 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d85b3d4b3ba6_72804555 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="description" class="mw-content-ltr" lang="fr" dir="ltr">
     <h1>Bienvenue !</h1>
@@ -34,9 +34,9 @@ function content_58d00488e7af29_06657241 (Smarty_Internal_Template $_smarty_tpl)
     <img id="acupuncture-home-img" src="img/acupuncture.png" alt="illustration acupuncture">
 </div>
 
-<div id = "flux" clas="fluxRSS">
+<div id = "flux" class="fluxRSS">
     <h1 id="flux-titre">Flux RSS</h1>
-    <?php
+    <!-- <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['rss']->value, 'itemRSS');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['itemRSS']->value) {
@@ -53,7 +53,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['itemRSS']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
-
+ -->
 
 </div><?php }
 }

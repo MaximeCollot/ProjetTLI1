@@ -1,9 +1,12 @@
 <h1>Pathologies</h1>
 	Filtre : 
 	<form action="index.php?page=patho" method="post">
-		{html_options name=typeFilter values=$typeListFilter output=$typeListFilter selected=$typeSelected}
- 		{html_options name=meridienFilter values=$meridienListFilter output=$meridienListFilter selected=$meridienSelected }
-		{html_options name=caracteristiqueFilter values=$caracteristiqueListFilter output=$caracteristiqueListFilter selected=$caracteristiqueSelected }
+		<label for="typeFilter">Type&nbsp;:</label>
+		{html_options id=typeFilter name=typeFilter values=$typeListFilter output=$typeListFilter selected=$typeSelected}
+		<label for="meridienFilter">Meridien&nbsp;:</label>
+ 		{html_options id=meridienFilter name=meridienFilter values=$meridienListFilter output=$meridienListFilter selected=$meridienSelected }
+ 		<label for="caracteristiqueFilter">Caracteristique&nbsp;:</label>
+		{html_options id=caracteristiqueFilter name=caracteristiqueFilter values=$caracteristiqueListFilter output=$caracteristiqueListFilter selected=$caracteristiqueSelected }
 		<input type="submit" name="Filtrer" value="Filtrer" hidden>
 	</form>
 	{foreach from=$list_patho key=key item=categorie}
@@ -20,7 +23,7 @@
 				<h4>Caratéristique : {$key}</h4>
 				{/if}
 				{foreach from=$carac key=key item=pathologie}
-					<h5>Pathologie : {$pathologie->getDescription()}</h5>
+					<h4>Pathologie : {$pathologie->getDescription()}</h4>
 					<h5>Symptome :</h5>
 					{foreach from=$pathologie->getSymptomes() key=key item=symptome}
 						<p>{$symptome}</p>

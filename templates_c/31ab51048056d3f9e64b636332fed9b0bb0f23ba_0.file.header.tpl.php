@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-20 16:39:23
+/* Smarty version 3.1.30, created on 2017-03-27 00:28:41
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d005bbebfeb8_97710385',
+  'unifunc' => 'content_58d85cb9d21fa8_27016792',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '31ab51048056d3f9e64b636332fed9b0bb0f23ba' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\header.tpl',
-      1 => 1490027944,
+      1 => 1490574516,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d005bbebfeb8_97710385 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58d85cb9d21fa8_27016792 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html >
 <html lang="fr">
@@ -60,10 +60,10 @@ function content_58d005bbebfeb8_97710385 (Smarty_Internal_Template $_smarty_tpl)
 					Mail :
 				</label>
 				<input type="email" name="mail" id="mail" required>
-				<label for="password">
+				<label for="pwd">
 					Mot de passe :
 				</label>
-				<input type="password" name="password" id="password" required>
+				<input type="password" name="pwd" id="pwd" required>
 				<button type="submit" name="connection" class="">Valider</button>
 			</form>
 		</div>  

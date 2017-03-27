@@ -29,10 +29,10 @@
 					Mail :
 				</label>
 				<input type="email" name="mail" id="mail" required>
-				<label for="password">
+				<label for="pwd">
 					Mot de passe :
 				</label>
-				<input type="password" name="password" id="password" required>
+				<input type="password" name="pwd" id="pwd" required>
 				<button type="submit" name="connection" class="">Valider</button>
 			</form>
 		</div>  

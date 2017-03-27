@@ -25,7 +25,7 @@ if(isset($_SESSION['identifiant'])){
 // Si l'utilisateur créé un compte, on vérifie que tous les champs sont remplis et on utilise la fonction de la classe PDO
 if(isset($_POST['connection'])){
     if(isset($_POST['mail'])){
-        if(isset($_POST['password'])){
+        if(isset($_POST['pwd'])){
             $auth = authentication($pdo);
             if($auth){
                 $_SESSION['identifiant'] = $auth;
@@ -162,7 +162,7 @@ $smarty->display($template);
 $smarty->display('footer.tpl');
 
 function authentication($pdo){
-    $result = $pdo->getUser($_POST['mail'], $_POST['password']);
+    $result = $pdo->getUser($_POST['mail'], $_POST['pwd']);
     return $result;
 }
 
