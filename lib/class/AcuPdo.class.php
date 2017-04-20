@@ -35,7 +35,7 @@ class AcuPdo {
     private function getdb(){
 
         try {
-            $this->_db = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', 'root');
+            $this->_db = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', '');
         }
         catch (Exception $exception) {
             die('Erreur : ' . $exception->getMessage());

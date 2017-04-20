@@ -132,6 +132,13 @@ if (isset($_GET['page'])) {
         case 'subscribe':
         $template = 'subscribe.tpl';
         break;
+
+        case 'search' :
+            //$keywords = $pdo->getKeywords();
+            //if(isset($keywords))
+            $template = 'search.tpl';
+            break;
+
         case 'info':
         $template = "info.tpl";
         break;

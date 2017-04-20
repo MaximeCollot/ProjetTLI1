@@ -15,6 +15,10 @@
 		<nav class="headerNav">
 			<a href="index.php?page=home" class="header-button-left currentPage" tabindex="1" accesskey="w">Accueil</a>
 			<a href="index.php?page=patho" class="header-button-left" tabindex="10" accesskey="s">Symptomes</a>
+            {if $identifiant != ''}
+				<a href="index.php?page=search" class="header-button-left" tabindex="11" accesskey="r">Recherche</a>
+            {/if}
+
 			{if $identifiant == ''}
 			<a href="#" onclick="showConnect()" class="header-button-right" tabindex="2" accesskey="c">Connexion</a>
 			<a href="index.php?page=subscribe" class="header-button-right" tabindex="3" accesskey="i">Inscription</a>
