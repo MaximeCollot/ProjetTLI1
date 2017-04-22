@@ -112,6 +112,18 @@ class AcuPdo {
 
     }
 
+    public function getKeywords(){
+        if (!isset($this->_db)) {
+            $this->getdb();
+        }
+        $query = $this->_db->prepare('SELECT name
+                                        FROM keywords
+                                        ;');
+        $query->execute();
+        $result = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+        return $result;
+    }
+
     public function getListType(){
         return $this->typePatho;
     }

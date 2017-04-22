@@ -129,6 +129,11 @@ if (isset($_GET['page'])) {
         $smarty->assign('list_patho', $list_patho);
         $template = "patho.tpl";
         break;
+        case 'recherche':
+        $keywords = $pdo->getKeywords();
+        $smarty->assign('keywords', $keywords);
+        $template = 'recherche.tpl';
+        break;
         case 'subscribe':
         $template = 'subscribe.tpl';
         break;

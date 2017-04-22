@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    	var typeSelect = document.getElementsByName("typeFilter")[0];
-    	if (typeSelect){
+    	var typeSelect = $('#typeFilter');
+    	if (typeSelect.length){
 			typeSelect.addEventListener("change",function(){
 				typeSelect.form.submit()
 			});
@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    	var meridienSelect = document.getElementsByName("meridienFilter")[0];
-    	if (meridienSelect){
+    	var meridienSelect = $('#meridienFilter');
+    	if (meridienSelect.length){
 			meridienSelect.addEventListener("change",function(){
 				meridienSelect.form.submit()
 			});
@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    	var caracteristiqueSelect = document.getElementsByName("caracteristiqueFilter")[0];
-    	if (caracteristiqueSelect){
+    	var caracteristiqueSelect = $('#caracteristiqueFilter');
+    	if (caracteristiqueSelect.length){
 			caracteristiqueSelect.addEventListener("change",function(){
 				caracteristiqueSelect.form.submit()
 			});

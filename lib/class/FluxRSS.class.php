@@ -8,7 +8,7 @@ class FluxRSS {
   public function getFluxrss() {
 
     $cache_time = 3600*24; // 24 hours
-    $cache_file = $_SERVER['DOCUMENT_ROOT'].'/cache/test.rss';
+    $cache_file = $_SERVER['DOCUMENT_ROOT'].'Acupuncture/cache/test.rss';
     
     if (file_exists($cache_file)) {
       $timedif = @(time() - filemtime($cache_file));
