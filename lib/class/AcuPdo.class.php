@@ -35,7 +35,6 @@ class AcuPdo {
     private function getdb(){
 
         try {
-            $this->_db = new PDO('mysql:host=localhost;dbname=acu;charset=utf8', 'root', 'root');
         }
         catch (Exception $exception) {
             die('Erreur : ' . $exception->getMessage());
@@ -68,6 +67,57 @@ class AcuPdo {
         $result = $query->fetchAll();
         $pathos = $this->setPathos($result);
         return $pathos;
+    }
+
+    public function getPathoByKeywords($keywords){
+        if (!isset($this->_db)) {
+            $this->getdb();
+        }
+        $cpt = 0;
+        if(count($keywords) > 0){
+
+            $queryString = 'SELECT patho.mer as CODE_MERIDIEN,
+patho.type as TYPE_PATHO,
+patho.desc as DESCRIPTION_PATHO,
+meridien.nom as NAME_MERIDIEN,
+meridien.element as ELEMENT_MERIDIEN,
+meridien.yin as YIN_MERIDIEN,
+typepatho.nom as NAME_TYPEPATHO,
+typepatho.carac1 as CARAC1_TYPEPATHO,
+typepatho.carac2 as CARAC2_TYPEPATHO,
+symptome.desc as DESC_SYMPTOME
+
+FROM patho
+INNER JOIN symptpatho on symptpatho.idP = patho.idP
+INNER JOIN keysympt on keysympt.idS = symptpatho.idS
+INNER JOIN keywords on keywords.idK = keysympt.idK
+LEFT JOIN meridien ON patho.mer = meridien.code
+LEFT JOIN typepatho ON patho.type = typepatho.code
+LEFT JOIN symptome ON symptome.idS = symptPatho.idS
+
+WHERE ';
+
+
+            $keywordsMap = array();
+            foreach ($keywords as $keyword){
+                if ($cpt > 0) {
+                    $queryString = $queryString." OR ";
+                }
+                $cpt += 1;
+                $param = ":param".$cpt;
+                $queryString = $queryString."keywords.name LIKE '%".$param."%'";
+                $keywordsMap[$param] = $keyword;
+
+            }
+            //$queryString = "SELECT patho.mer as CODE_MERIDIEN, patho.type as TYPE_PATHO, patho.desc as DESCRIPTION_PATHO, meridien.nom as NAME_MERIDIEN, meridien.element as ELEMENT_MERIDIEN, meridien.yin as YIN_MERIDIEN, typepatho.nom as NAME_TYPEPATHO, typepatho.carac1 as CARAC1_TYPEPATHO, typepatho.carac2 as CARAC2_TYPEPATHO, symptome.desc as DESC_SYMPTOME FROM patho INNER JOIN symptpatho on symptpatho.idP = patho.idP INNER JOIN keysympt on keysympt.idS = symptpatho.idS INNER JOIN keywords on keywords.idK = keysympt.idK LEFT JOIN meridien ON patho.mer = meridien.code LEFT JOIN typepatho ON patho.type = typepatho.code LEFT JOIN symptome ON symptome.idS = symptPatho.idS WHERE keywords.name LIKE '%intestin%'" ;
+            $query = $this->_db->prepare($queryString);
+            $query->execute($keywordsMap);
+            //$query->execute();
+            $result = $query->fetchAll();
+            $pathos = $this->setPathos($result);
+            return $pathos;
+
+        }
     }
 
     public function getUser($mail, $password){
