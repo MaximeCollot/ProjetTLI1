@@ -242,6 +242,6 @@ footer {
     animation: spin 2s linear infinite;
 }
 
-#keywordList {
+#keywordList, #result {
     text-align: center;
 }
