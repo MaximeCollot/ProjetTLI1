@@ -19,18 +19,22 @@
 });
 
 var addKeyword = function(keyword){
+
 	var button = document.createElement('button');
 	button.setAttribute("id", "btn_"+keyword);
+	console.log(button);
 	$('#keywordList').append(button);
-	$('#btn_'+keyword).button({
+	$('#btn_'+keyword.replace(" ", "\\ ")).button({
 		label: keyword,
 		icon: "ui-icon-close"
 	});
+	$('#btn_'+keyword.replace(" ", "\\ ")).click(function(){deleteKeyword(keyword)});
 	keywordList.push(keyword);
+	console.log(keywordList);
 }
 
 var deleteKeyword = function(keyword){
-	console.log("delete");
-	$('btn_'+keyword).remove();
-	delete keywordList[keyword];
+	var resutDelete = $("#btn_"+keyword.replace(" ", "\\ ")).remove();
+	var index = keywordList.indexOf(keyword);
+	keywordList.splice(index, 1);
 }
