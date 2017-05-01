@@ -8,5 +8,7 @@
 <h2>Liste de mots-clés : </h2>
 </div>
 <div id="result">
+<h2>Résults : </h2>
+<input type="button" id="getPathos" value="Afficher les résultats"></input>
 </div>
 {html_options id=keywords name=keywords values=$keywords output=$keywords}
