@@ -6,7 +6,7 @@
  * Time: 11:00
  */
 
-require("lib/class/Pathologie.class.php");
+require("Pathologie.class.php");
 
 class AcuPdo {
 

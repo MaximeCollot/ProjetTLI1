@@ -9,12 +9,14 @@
 
  var keywords=null;
  var keywordList=[];
+ var originalResultDiv = null;
 
  document.addEventListener("DOMContentLoaded", function(event) {
 	keywords = $.map($('#keywords option'), function(option){
 		return option.value;
 	})
 	$('#keywordInput').autocomplete({source : keywords});
+
 	$('#keywords').remove();
 	$('#getPathos').click(function() {
 		getPathos();
@@ -42,13 +44,24 @@ var deleteKeyword = function(keyword){
 }
 
 var getPathos = function() {
-	var keywordsToSend = keywordList.join();
+	var keywordsToSend = keywordList.join('/');
+	console.log(keywordsToSend);
+	var customurl = "index/search/" + keywordsToSend;
+	if (originalResultDiv == null) {
+        originalResultDiv = $('#result').html();
+		console.log("je sauvegarde");
+	}
+	else {
+		reset('result', originalResultDiv);
+		console.log("je reset");
+	}
+
 	$.ajax({
-            url : 'ws.php',
+            url : customurl,
             crossDomain : true,
             method : 'GET',
-            data : {"keywordList" : keywordsToSend},
-            dataType : 'json',
+            //data : {"keywordList" : keywordsToSend},
+            //dataType : 'json',
             
             success : function(data){
             	console.log(data.pathos);
@@ -72,4 +85,9 @@ var getPathos = function() {
             }
     });
 
+}
+
+function reset(elementID, resetValue)
+{
+	document.getElementById(elementID).innerHTML = resetValue;
 }
