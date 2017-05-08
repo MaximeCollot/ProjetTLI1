@@ -1,0 +1,1 @@
+Ce dossier est créé pour permettre de rediriger les requêtes dirigées sur localhost/index/search vers localhost/ws/webservice.php?request='search/arg1/arg2...'
