@@ -6,7 +6,7 @@
  * Date: 07/03/2017
  * Time: 17:05
  */
-class Pathologie
+class Pathologie  implements JsonSerializable 
 {
     //NAME_TYPEPATHO
     private $_categorie;
@@ -117,5 +117,11 @@ class Pathologie
         $this->_symptomes[] = $symptomes;
     }
 
+    public function jsonSerialize() {
+        return [
+            'pathologie' => $this->getDescription(),
+            'symptomes' => $this->getSymptomes()
+        ];
+    }
 
 }

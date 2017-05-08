@@ -76,7 +76,6 @@ if (isset($_GET['page'])) {
 
         case 'patho':
         $list_patho = $pdo->getpatho();
-        //var_dump($list_patho);
         $type = $pdo->getListType();
 
         // On assigne les variables issues du flitrage
@@ -133,8 +132,6 @@ if (isset($_GET['page'])) {
         $keywords = $pdo->getKeywords();
         $smarty->assign('keywords', $keywords);
         $template = 'recherche.tpl';
-        //$pdo->getPathoByKeywords(array('intestin'));
-        echo(count($pdo->getPathoByKeywords(array('intestin'))));
         break;
         case 'subscribe':
         $template = 'subscribe.tpl';

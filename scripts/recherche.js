@@ -43,15 +43,32 @@ var deleteKeyword = function(keyword){
 
 var getPathos = function() {
 	var keywordsToSend = keywordList.join();
-	console.log(keywordsToSend);
 	$.ajax({
             url : 'ws.php',
             crossDomain : true,
             method : 'GET',
             data : {"keywordList" : keywordsToSend},
+            dataType : 'json',
             
             success : function(data){
-            	console.log(data);
+            	console.log(data.pathos);
+            	$.each(data.pathos, function(typePatho, meridienElement){
+            		$('#result').append("<div class='typePatho' id='"+typePatho+"'><h2>Type de pathologie : "+typePatho+"</h2></div>");
+            		$.each(meridienElement, function(meridien, caracteristiqueElement){
+            			$('#'+typePatho.replace("/","\\/")).append("<div class='meridien' id='"+meridien.replace(" ","_")+"'><h3>Méridien : "+meridien+"</h3></div>");
+            			$.each(caracteristiqueElement, function(caracteristique, pathologieElements){
+            				if (caracteristique != "neant"){
+            					$('#'+meridien.replace(" ","_")).append("<h4>Caracteristique : "+caracteristique+"</h4>");
+            				}
+            				$.each(pathologieElements, function(index, pathologieElement){
+            					$('#'+meridien.replace(" ","_")).append("<h4>Pathologie : "+pathologieElement.pathologie+"</h4>");
+            					$.each(pathologieElement.symptomes, function(index, symptome){
+            						$('#'+meridien.replace(" ","_")).append("<h5>Symptome : </h5><p>"+symptome+"</p>");
+            					})
+            				});
+            			});
+            		});
+            	});
             }
     });
 

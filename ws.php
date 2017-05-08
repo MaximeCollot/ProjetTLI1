@@ -9,10 +9,9 @@ header('Content-type: application/json; charset=utf-8');
 if (isset($_GET["keywordList"])){
 	$keywordList = explode(',', $_GET["keywordList"]);
 }
-var_dump($keywordList);
-// $result = $pdo->getKeywords();
-// $json = array("status" => 1, "info" => $result);
-// echo json_encode($json);
+$result = $pdo->getPathoByKeywords($keywordList);
+$json = array("status" => 1, "pathos" => $result);
+echo json_encode($json, JSON_FORCE_OBJECT);
 /*foreach ($result as $value) {
 	echo $value;
 	echo "/";

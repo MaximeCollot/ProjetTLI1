@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-03-27 00:44:46
+/* Smarty version 3.1.30, created on 2017-05-08 05:15:40
   from "C:\Users\Maxime\Documents\ProjetTLI\templates\patho.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58d8607e0ed616_77181636',
+  'unifunc' => 'content_590ffefc7efa33_38928429',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '689751d6285f69e281d2a8a4916572b7e1eb23a0' => 
     array (
       0 => 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\templates\\patho.tpl',
-      1 => 1490575482,
+      1 => 1494220489,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58d8607e0ed616_77181636 (Smarty_Internal_Template $_smarty_tpl) {
+function content_590ffefc7efa33_38928429 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\Users\\Maxime\\Documents\\ProjetTLI\\lib\\smarty\\plugins\\function.html_options.php';
 ?>
 <h1>Pathologies</h1>
 	Filtre : 
-	<form action="index.php?page=patho" method="post">
+	<form id="filterForm" action="index.php?page=patho" method="post">
 		<label for="typeFilter">Type&nbsp;:</label>
 		<?php echo smarty_function_html_options(array('id'=>'typeFilter','name'=>'typeFilter','values'=>$_smarty_tpl->tpl_vars['typeListFilter']->value,'output'=>$_smarty_tpl->tpl_vars['typeListFilter']->value,'selected'=>$_smarty_tpl->tpl_vars['typeSelected']->value),$_smarty_tpl);?>
 

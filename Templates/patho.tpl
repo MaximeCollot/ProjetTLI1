@@ -1,6 +1,6 @@
 <h1>Pathologies</h1>
 	Filtre : 
-	<form action="index.php?page=patho" method="post">
+	<form id="filterForm" action="index.php?page=patho" method="post">
 		<label for="typeFilter">Type&nbsp;:</label>
 		{html_options id=typeFilter name=typeFilter values=$typeListFilter output=$typeListFilter selected=$typeSelected}
 		<label for="meridienFilter">Meridien&nbsp;:</label>
